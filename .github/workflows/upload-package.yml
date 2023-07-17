@@ -20,7 +20,7 @@ jobs:
           yarn
           yarn build
       - name: Create zip
-        run: zip -r -j ${{ github.event.repository.name }}.zip dist/*
+        run: zip -r -j ${{ github.event.repository.name }}.zip dist/* LICENSE
       - name: Upload
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
