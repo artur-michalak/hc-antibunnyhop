@@ -22,6 +22,14 @@ where m = maxRiskyJumps, x = number of risky jumps made, curve = the strength of
 
 Parameter `maxSafeJumps` determines how many jumps can be safely made (it is possible that there is one more above this parameter).
 
+### Usage steps
+
+- download latest .zip release
+- unpack files to resources/<resource_name> catalog e.g. resources/[standalone]/hc-antibunnyhop
+- move hc.cfg from resource catalog to root of the server (same place where server.cfg is)
+- in server.cfg set `ensure hc-antibunnyhop` to enable script and `exec hc.cfg` to setup configuration
+- adjust configuration in hc.cfg to your needs
+
 ### Project build
 
 #### required

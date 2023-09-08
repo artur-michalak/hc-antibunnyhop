@@ -1,14 +1,31 @@
-const maxRiskyJumps = 10,
-  maxSafeJumps = 5,
-  curve = 5,
-  comboBreakTime = 5000;
+const DEFAULT_VALUES = { maxRiskyJumps: 10, maxSafeJumps: 5, curve: 5, comboBreakTime: 5000 } as {
+  [key: string]: number;
+};
+
+const checkVariables = (variables: typeof DEFAULT_VALUES, defaults: number[]) =>
+  Object.keys(variables).reduce(
+    (dst, current, index) => ({ ...dst, [current]: isNaN(variables[current]) ? defaults[index] : variables[current] }),
+    DEFAULT_VALUES
+  );
+
+const { maxRiskyJumps, maxSafeJumps, curve, comboBreakTime } = checkVariables(
+  {
+    maxRiskyJumps: parseInt(GetConvar("hc:abh:max_risky_jumps", `${DEFAULT_VALUES.max_risky_jumps}`)),
+    maxSafeJumps: parseInt(GetConvar("hc:abh:max_safe_jumps", `${DEFAULT_VALUES.maxSafeJumps}`)),
+    curve: parseInt(GetConvar("hc:abh:curve", `${DEFAULT_VALUES.curve}`)),
+    comboBreakTime: parseInt(GetConvar("hc:abh:comboBreakTime", `${DEFAULT_VALUES.comboBreakTime}`)),
+  },
+  Object.values(DEFAULT_VALUES)
+);
+
+console.log({ maxRiskyJumps, maxSafeJumps, curve, comboBreakTime });
 
 const delay = async (ms: number) => new Promise((resolve) => setTimeout(resolve, ms, []));
 
 const c = curve / 2;
 const bp = (t: number) => {
   const s = t / maxRiskyJumps;
-  return (c * ( s - s * s) + s * (c - s * c + s * maxRiskyJumps)) / maxRiskyJumps;
+  return (c * (s - s * s) + s * (c - s * c + s * maxRiskyJumps)) / maxRiskyJumps;
 };
 
 const jumpingObserver = async () => {
