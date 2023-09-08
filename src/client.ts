@@ -18,8 +18,6 @@ const { maxRiskyJumps, maxSafeJumps, curve, comboBreakTime } = checkVariables(
   Object.values(DEFAULT_VALUES)
 );
 
-console.log({ maxRiskyJumps, maxSafeJumps, curve, comboBreakTime });
-
 const delay = async (ms: number) => new Promise((resolve) => setTimeout(resolve, ms, []));
 
 const c = curve / 2;
