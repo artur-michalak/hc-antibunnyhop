@@ -1,4 +1,4 @@
-# HC Anti Bunnyhop
+# HC AntiBunnyhop
 
 ### Configuration
 
