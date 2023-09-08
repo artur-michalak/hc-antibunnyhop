@@ -3,6 +3,6 @@ game 'gta5'
 
 author 'HedgeCode <🦔>'
 description 'hc-antibunnyhop'
-version '1.0.0'
+version '1.1.0'
 
 client_script 'client.js'
