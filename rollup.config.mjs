@@ -22,16 +22,16 @@ export default {
   ),
   output: {
     format: "es",
-    dir: "hc-antibunnyhop",
+    dir: "dist",
   },
   plugins: [
     typescript(),
-    del({ targets: "hc-antibunnyhop/*" }),
+    del({ targets: "dist/*" }),
     copy({
       targets: [
         {
           src: "src/**/public",
-          dest: "hc-antibunnyhop",
+          dest: "dist",
           rename: (name, extension, fullPath) =>
             fullPath.substring(
               fullPath.indexOf("/") + 1,
