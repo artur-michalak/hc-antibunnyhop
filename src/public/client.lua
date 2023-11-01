@@ -1,0 +1,1 @@
+local a=function(b)return IsPedOnFoot(b)and(IsPedRunning(b)or IsPedSprinting(b))and IsPedJumping(b)and not(IsPedSwimming(b)or IsPedClimbing(b)or IsPedRagdoll(b))end;CreateThread(function()local c=false;while true do Wait(100)if not c and a(PlayerPedId())then c=true;exports['hc-antibunnyhop']:jumpingObserver()c=false end end end)exports('isPedInSky',a)

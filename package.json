@@ -1,17 +1,25 @@
 {
   "name": "hc-antibunnyhop",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "Fivem script to block bunny hopping",
   "repository": "https://github.com/ArturMichalak/hc-antibunnyhop",
   "author": "Artur Michalak",
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "esbuild": "^0.18.13",
-    "esbuild-copy-static-files": "^0.1.0",
-    "typescript": "^5.1.6"
+    "@citizenfx/client": "^2.0.6831-1",
+    "@citizenfx/server": "^2.0.6831-1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "glob": "^10.3.10",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup": "^4.1.4",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
   },
   "scripts": {
-    "build": "node esbuild.config.js"
+    "build": "rollup -c"
   }
 }
