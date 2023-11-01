@@ -2,7 +2,7 @@
 
 ### Configuration
 
-To change the configuration parameters, I recommend downloading the source code and re-building the package.
+To change the configuration parameters, I recommend changing the parameters in the hc.conf file.
 
 The script works in such way that with the number of jumps, the chance of the player ped losing balance increases.
 
@@ -37,7 +37,7 @@ Parameter `maxSafeJumps` determines how many jumps can be safely made (it is pos
 - yarn
 
 #### steps
-- `git clone https://github.com/ArturMichalak/hc-antibunnyhop.git`
+- `git clone https://github.com/ArturMichalak/hc-antibunnyhop.git` or extract files from zip obtained by clicking  `Download ZIP` button 
 - `yarn`
 - `modify the parameters in a client.ts file`
 - `yarn build`
